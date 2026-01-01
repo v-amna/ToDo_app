@@ -48,6 +48,10 @@ const toggleTask=(Index) => {
     updateTasksList();
 
 };
+const deleteTask = (Index) => {
+    task.splice(Index, 1);
+    updateTasksList();
+}
 document.getElementById("newTask").addEventListener('click', function(e){
    e.preventDefault();
     addTask();
