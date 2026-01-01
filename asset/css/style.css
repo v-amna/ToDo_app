@@ -48,7 +48,7 @@ body{
     margin-top: 20px;
 }
 #progress{
-    width: 50%;
+    width: 0%;
     height: 10px;
     background-color: var(--teal);
     border-radius: 10px;
@@ -106,10 +106,15 @@ button{
 #task-list li{
     background-color: var(--secondaryBackground);
     border: 1px solid var(--purple);
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 10px;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    transition: background 0.2s ease;
 }
+#task-list li:hover {
+    background-color: #1f255c;
+}
+
 .taskItem{
     display: flex;
     justify-content: space-between;
@@ -129,4 +134,68 @@ button{
     font-size: 18px;
     cursor: pointer;
 }
+
+
+/* ---------- Tablets ---------- */
+@media (max-width: 900px) {
+    .container {
+        margin-top: 80px;
+    }
+
+    .status_container {
+        gap: 30px;
+    }
+}
 /* media querry*/
+@media (max-width:600px) {
+    .status_container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+     #numbers {
+        width: 80px;
+        height: 80px;
+        font-size: 22px;
+    }
+
+    form {
+        margin-top: 40px;
+    }
+
+    input {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 45px;
+        height: 45px;
+        font-size: 26px;
+    }
+    
+}
+/* ---------- Small Phones ---------- */
+@media (max-width: 400px) {
+    .details h1 {
+        font-size: 22px;
+    }
+
+    .details p {
+        font-size: 14px;
+    }
+
+    #numbers {
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
+    }
+
+    #task-list li {
+        padding: 12px;
+    }
+
+    .icons button {
+        font-size: 16px;
+    }
+}

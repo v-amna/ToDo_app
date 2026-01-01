@@ -40,6 +40,7 @@ const updateTasksList = () => {
         `;
         tasksList.appendChild(listItem);
     });
+    updateProgress();
 
 };
 
@@ -48,10 +49,28 @@ const toggleTask=(Index) => {
     updateTasksList();
 
 };
+
+const updateProgress = () => {
+    const completedTasks = task.filter(t => t.completed).length;
+    const totalTasks = task.length;
+
+    const progress = document.getElementById("progress");
+    const numbers = document.getElementById("numbers");
+
+    numbers.textContent = `${completedTasks}/${totalTasks}`;
+
+    const percentage = totalTasks === 0 
+        ? 0 
+        : (completedTasks / totalTasks) * 100;
+
+    progress.style.width = `${percentage}%`;
+};
+
 const deleteTask = (Index) => {
     task.splice(Index, 1);
     updateTasksList();
 }
+
 document.getElementById("newTask").addEventListener('click', function(e){
    e.preventDefault();
     addTask();
