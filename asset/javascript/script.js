@@ -33,7 +33,7 @@ const updateTasksList = () => {
                     </p>
                 </div>
                 <div class="icons">
-                    <button onclick="deleteTask(${index})">🗑</button>
+                    <button onclick="deleteTask(${Index})">🗑</button>
                 </div>
             </div>   
 
@@ -43,7 +43,11 @@ const updateTasksList = () => {
 
 };
 
+const toggleTask=(Index) => {
+    task[Index].completed=!task[Index].completed;
+    updateTasksList();
 
+};
 document.getElementById("newTask").addEventListener('click', function(e){
    e.preventDefault();
     addTask();
