@@ -33,7 +33,7 @@ const updateTasksList = () => {
                     </p>
                 </div>
                 <div class="icons">
-                    <button onclick="deleteTask(${Index})">🗑</button>
+                    <button onclick="deleteTask(${Index})" aria-label="Delete task">🗑</button>
                 </div>
             </div>   
 

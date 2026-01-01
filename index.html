@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="ToDo App – Add, complete, and delete tasks. Track your progress with a dynamic progress bar. Simple and responsive task manager for students and professionals.">
+<meta name="keywords" content="ToDo App, Task Manager, Task List, Productivity App, Responsive Web App, HTML, CSS, JavaScript">
+<meta name="author" content="Your Name">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To_DO List</title>
     <link rel="stylesheet" href="asset/css/style.css">
 </head>
 <body>
+ 
+
     <div class="container">
         <div class="status_container">
             <div class="details">
@@ -21,10 +27,11 @@
             </div>
         </div>
         <form action="">
+             
             <input type="text" id="taskInput" placeholder="write your task">
-            <button id="newTask" type="submit">+</button>
+            <button id="newTask" type="submit" aria-label="Add new task">+</button>
         </form>
-        <ul id="task-list"></ul>
+        <ul id="task-list" role="list" aria-live="polite"></ul>
     </div>
     <script src="asset/javascript/script.js"></script>
 </body>
