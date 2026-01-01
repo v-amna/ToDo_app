@@ -1,4 +1,4 @@
-
+/*Global style*/
 *{
     margin: 0;
     padding: 0;
@@ -47,14 +47,16 @@ body{
     border-radius: 5px;
     margin-top: 20px;
 }
+/* Progress fill - width updated dynamically with JS */
 #progress{
     width: 0%;
     height: 10px;
     background-color: var(--teal);
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Smooth animation when task completed */
 
 }
+/* Circular task numbers (completed / total) */
 #numbers{
     width: 100px;
     height: 100px;
@@ -73,7 +75,7 @@ form{
     gap: 10px;
 }
 input{
-    flex: 1;
+    flex: 1; /* Takes remaining space */
     padding: 16px;
     background: var(--secondaryBackground);
     border: 1px solid var(--purple);
@@ -85,7 +87,7 @@ button{
     padding: 16px;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 50%;/*circle button*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,7 +101,7 @@ button{
 }
 /*Task list styles*/
 #task-list{
-    list-style: none;
+    list-style: none; /* Remove default bullets */
     margin-top: 30px;
     padding: 0;
 }
@@ -111,6 +113,7 @@ button{
     margin-bottom: 12px;
     transition: background 0.2s ease;
 }
+/* Hover effect for task row */
 #task-list li:hover {
     background-color: #1f255c;
 }
@@ -121,6 +124,7 @@ button{
     align-items: center;
 }
 /*******/
+/* Left section: checkbox + task text */
 .task {
     display: flex;
     align-items: center;
@@ -133,6 +137,7 @@ button{
     accent-color: var(--teal);
     cursor: pointer;
 }
+/* Task text styling */
 .task p {
     font-size: 16px;
     line-height: 1.4;
@@ -146,10 +151,12 @@ button{
     text-decoration: line-through;
     opacity: 0.6;
 }
+/* Right side: icons */
 .icons{
     display: flex;
     gap: 10px;
 }
+/* Delete button styling */
 .icons button{
     background: transparent;
     border: none;
@@ -174,7 +181,7 @@ button{
         gap: 30px;
     }
 }
-/* media querry*/
+/* media querry Mobile*/
 @media (max-width:600px) {
     .status_container {
         flex-direction: column;
