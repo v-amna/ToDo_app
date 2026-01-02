@@ -6,7 +6,7 @@ const addTask = ()=> {
     const taskInput= document.getElementById('taskInput')
     const text= taskInput.value.trim()
 
-    //// Validate input: prevent empty tasks
+    // Validate input: prevent empty tasks
     if(text===""){
        
         
