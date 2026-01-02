@@ -218,7 +218,7 @@ button{
     }
     
 }
-/* ---------- Small Phones ---------- */
+/* ---------- Small Phones ---------- 
 @media (max-width: 400px) {
     .details h1 {
         font-size: 22px;
@@ -240,5 +240,43 @@ button{
 
     .icons button {
         font-size: 16px;
+    }
+}*/
+/* ---------- Small Mobile Devices (320x480) ---------- */
+@media (max-width: 360px) and (max-height: 640px) {
+
+    .container {
+        margin-top: 20px;
+        padding: 0 12px;
+    }
+
+    .status_container {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    #numbers {
+        width: 60px;
+        height: 60px;
+        font-size: 18px;
+    }
+
+    form {
+        margin-top: 24px;
+    }
+
+    input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+    }
+
+    .task p {
+        font-size: 13px;
     }
 }
