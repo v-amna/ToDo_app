@@ -3,8 +3,8 @@ let task=[];
 
 //Add Task Function
 const addTask = ()=> {
-    const taskInput= document.getElementById('taskInput')
-    const text= taskInput.value.trim()
+    const taskInput= document.getElementById('taskInput');
+    const text= taskInput.value.trim();
 
     // Validate input: prevent empty tasks
     if(text===""){
@@ -56,7 +56,7 @@ const updateTasksList = () => {
 
 };
 // Switches task.completed between true or false
-const toggleTask=(Index) => {
+const toggleTask = (Index) => {
     task[Index].completed=!task[Index].completed;
     updateTasksList();
 
@@ -72,20 +72,27 @@ const updateProgress = () => {
     // Show completed / total
     numbers.textContent = `${completedTasks}/${totalTasks}`;
     
-// Update width of progress bar
-    const percentage = totalTasks === 0 
-        ? 0 
-        : (completedTasks / totalTasks) * 100;
+/*Update width of progress bar*/
+    let percentage;
 
-    progress.style.width = `${percentage}%`;
+if (totalTasks === 0) {
+    percentage = 0; // No tasks, so progress is 0%
+} else {
+    percentage = (completedTasks / totalTasks) * 100;
+}
+
+progress.style.width = percentage + "%";
+
+
 };
+
 // Removes task from array by index
 const deleteTask = (Index) => {
     task.splice(Index, 1);
     updateTasksList();
-}
+};
 
 document.getElementById("newTask").addEventListener('click', function(e){
    e.preventDefault();
     addTask();
-})
+});
