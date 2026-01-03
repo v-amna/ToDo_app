@@ -85,6 +85,6 @@ This project was developed with reference to publicly available online resources
 - Lighthouse
 - W3C Validators
 
-## General Project Advice / Reflection
+## General Project Advice 
 
 This project helped me strengthen my understanding of DOM manipulation, event handling, and responsive design. I learned how to improve accessibility and usability using semantic HTML and ARIA attributes. In future projects, I plan to focus on advanced JavaScript patterns to further enhance user experience.
