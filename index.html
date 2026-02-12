@@ -13,24 +13,34 @@
  
 
     <div class="container">
-        <div class="status_container">
-            <div class="details">
-                <h1>ToDo App</h1>
-                <p>Keep it up!</p>
-                <div id="progressbar">
-                   <div id="progress"></div>
+        <!-- Header Section -->
+        <header class="site-header">
+            <div class="status_container">
+                <div class="details">
+                    <h1>ToDo App</h1>
+                    <p>Keep it up!</p>
+                    <div id="progressbar">
+                       <div id="progress"></div>
+                    </div>
+                </div>
+                <div class="status_numbers">
+                        <p id="numbers">0/0</p>
                 </div>
             </div>
-            <div class="status_numbers">
-                <p id="numbers">2/3</p>
-            </div>
-        </div>
-        <form >
-             
-            <input type="text" id="taskInput" placeholder="write your task">
-            <button id="newTask" type="submit" aria-label="Add new task">+</button>
-        </form>
-        <ul id="task-list"  aria-live="polite"></ul>
+        </header>
+    <!-- Main Content -->
+        <main>
+            <form >
+                <label for="taskInput" class="visually-hidden">New task</label>
+                <input type="text" id="taskInput" placeholder="write your task">
+                <button id="newTask" type="submit" aria-label="Add new task">+</button>
+            </form>
+            <ul id="task-list" aria-live="polite"></ul>
+        </main>
+    <!-- Footer Section -->
+        <footer class="site-footer">
+            <p>Simple ToDo App • Built for practice</p>
+        </footer>
     </div>
     <script src="asset/javascript/script.js"></script>
 </body>

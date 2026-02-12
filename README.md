@@ -43,10 +43,10 @@ This project was developed as part of my web development learning journey using 
 ##   Testing
 
   - W3C HTML Validator
-  [def]: asset/screenshort/htmlValidation.png
+  ![def]:( asset/screenshort/htmlValidation.png)
 
   - Jigsaw Validator
-  [def]:asset/screenshort/cssValidation.png
+  ![def]:asset/screenshort/cssValidation.png
 
   - JavaScript Validation
   [def]:asset/screenshort/jsValidation.png

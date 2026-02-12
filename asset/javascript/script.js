@@ -92,7 +92,28 @@ const deleteTask = (Index) => {
     updateTasksList();
 };
 
-document.getElementById("newTask").addEventListener('click', function(e){
-   e.preventDefault();
-    addTask();
+// Initialize UI and register event handlers once DOM is ready
+window.addEventListener('DOMContentLoaded', () => {
+    // Ensure the task list and progress reflect current state
+    updateTasksList();
+
+    // Add task button
+    const newTaskBtn = document.getElementById("newTask");
+    if (newTaskBtn) {
+        newTaskBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            addTask();
+        });
+    }
+
+    // Allow Enter key in the input to add a task
+    const taskInput = document.getElementById('taskInput');
+    if (taskInput) {
+        taskInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addTask();
+            }
+        });
+    }
 });
