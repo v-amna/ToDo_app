@@ -151,7 +151,7 @@ button{
 .task p {
     font-size: 16px;
     line-height: 1.4;
-    word-break: break-word;
+    overflow-wrap: break-word;
     color: #ffffff;
 }
 
