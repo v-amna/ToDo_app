@@ -76,6 +76,15 @@ form{
     display: flex;
     gap: 10px;
 }
+/* Label for the task input */
+.task-label{
+    color: var(--text);
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    align-self: center; /* vertically center within the form */
+    min-width: 90px; /* reserve space to the left of the input on wide screens */
+}
 input{
     flex: 1; /* Takes remaining space */
     padding: 16px;
@@ -189,6 +198,15 @@ button{
         align-items: center;
         gap: 20px;
     }
+    /* On smaller screens move the label above the input */
+    .task-label{
+        order: -1; /* place before other form items */
+        width: 100%;
+        margin-bottom: 8px;
+        min-width: 0;
+        text-align: left;
+        font-size: 14px;
+    }
      #numbers {
         width: 80px;
         height: 80px;
@@ -255,5 +273,30 @@ button{
 
     .task p {
         font-size: 13px;
+    }
+}
+
+/* ---------- Footer Styles ---------- */
+.site-footer{
+    width: 100%;
+    padding: 16px 12px;
+    margin-top: 28px;
+    text-align: center;
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+    background: transparent;
+    border-top: 1px solid rgba(90,92,255,0.12);
+    border-radius: 8px;
+}
+.site-footer p{
+    margin: 0;
+    opacity: 0.95;
+}
+
+@media (max-width: 600px) {
+    .site-footer{
+        font-size: 13px;
+        padding: 12px 10px;
+        margin-top: 20px;
     }
 }
