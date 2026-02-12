@@ -1,6 +1,20 @@
 // Array to store all tasks
 let task=[];
 
+// Local storage key
+const TASKS_KEY = "todo.tasks";
+
+// Load tasks from local storage
+const loadTasks = () => {
+    const stored = localStorage.getItem(TASKS_KEY);
+    task = stored ? JSON.parse(stored) : [];
+};
+
+// Save tasks to local storage
+const saveTasks = () => {
+    localStorage.setItem(TASKS_KEY, JSON.stringify(task));
+};
+
 //Add Task Function
 const addTask = ()=> {
     const taskInput= document.getElementById('taskInput');
@@ -23,6 +37,7 @@ const addTask = ()=> {
     
      // Update UI
      updateTasksList();
+    saveTasks();
 
 };
 //Update Task List
@@ -59,6 +74,7 @@ const updateTasksList = () => {
 const toggleTask = (Index) => {
     task[Index].completed=!task[Index].completed;
     updateTasksList();
+    saveTasks();
 
 };
 //  Update Progress Bar
@@ -72,17 +88,16 @@ const updateProgress = () => {
     // Show completed / total
     numbers.textContent = `${completedTasks}/${totalTasks}`;
     
-/*Update width of progress bar*/
+    /*Update width of progress bar*/
     let percentage;
 
-if (totalTasks === 0) {
-    percentage = 0; // No tasks, so progress is 0%
-} else {
-    percentage = (completedTasks / totalTasks) * 100;
-}
+    if (totalTasks === 0) {
+        percentage = 0; // No tasks, so progress is 0%
+    } else {
+        percentage = (completedTasks / totalTasks) * 100;
+    }
 
-progress.style.width = percentage + "%";
-
+    progress.style.width = percentage + "%";
 
 };
 
@@ -90,10 +105,12 @@ progress.style.width = percentage + "%";
 const deleteTask = (Index) => {
     task.splice(Index, 1);
     updateTasksList();
+    saveTasks();
 };
 
 // Initialize UI and register event handlers once DOM is ready
 window.addEventListener('DOMContentLoaded', () => {
+    loadTasks();
     // Ensure the task list and progress reflect current state
     updateTasksList();
 
